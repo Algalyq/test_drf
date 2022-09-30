@@ -16,9 +16,7 @@ from django.http import JsonResponse
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
-    permission_classes = [IsAuthenticated]
-    authentication_classes = (TokenAuthentication, ) 
-
+    
 class BossViewSet(viewsets.ModelViewSet):
     queryset = Boss.objects.all()
     serializer_class = BossSerializer
@@ -41,3 +39,5 @@ def BossModel(self,pk=None):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+    

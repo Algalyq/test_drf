@@ -6,7 +6,7 @@ from rest_framework.authtoken.views import Token
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
-        fields = ['id','Surename_empl','Name_empl', 'Salary', 'Post', 'Boss_id']
+        fields = ['id','Surename_empl','Name_empl', 'Salary', 'Post', 'Boss']
 
 
 class BossSerializer(serializers.ModelSerializer):

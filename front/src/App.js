@@ -1,7 +1,15 @@
+
+import {
+  HashRouter as Router,
+  BrowserRouter, Routes,
+  Route
+} from "react-router-dom";
+
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect, Component } from 'react';
 import EmployeeList from './components/EmployeeList';
+import EmployeeListPage from './pages/EmployeeListPage';
 
 
 function App() {
@@ -23,16 +31,11 @@ function App() {
   }, [])
 
     return (
-     <div className='App'>
-      <div className='col'>
-      <div className='row'>
-    <h2>HI</h2>
-    <br/>
-    </div>
-      <EmployeeList employees = {employees}/>
-      </div>
-
-     </div>
+    <BrowserRouter>
+      <Routes>
+      <Route path="/" exact component={<EmployeeList/>  } />
+      </Routes>
+    </BrowserRouter>
 
     )
   }
